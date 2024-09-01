@@ -1,10 +1,9 @@
 extern crate chrono;
-use chrono::prelude::DateTime;
-use chrono::{Utc, TimeZone};
-use std::time::{SystemTime, UNIX_EPOCH};
 use crate::cli;
 use crate::task;
-
+use chrono::prelude::DateTime;
+use chrono::{TimeZone, Utc};
+use std::time::{SystemTime, UNIX_EPOCH};
 
 //TODO: get rid of every unwrap
 pub fn get_time() -> DateTime<Utc> {
@@ -17,11 +16,10 @@ pub fn get_time() -> DateTime<Utc> {
 }
 
 //TODO: get rid of every unwrap
-pub fn new_task(args: cli::Cli) -> task::Task{
+pub fn new_task(args: cli::Cli) -> task::Task {
     task::Task {
         name: args.add_task.unwrap(),
         description: args.task_description.unwrap(),
-        creation_date: get_time()
+        creation_date: get_time(),
     }
 }
-
