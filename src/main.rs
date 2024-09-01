@@ -22,6 +22,7 @@ struct Cli {
 
 #[derive(Debug)]
 struct Task {
+    //Add status and optionally a priority
     name: String,
     description: String,
     creation_date: DateTime<Utc>, 
