@@ -1,6 +1,6 @@
 extern crate chrono;
 use chrono::prelude::DateTime;
-use chrono::{Utc};
+use chrono::Utc;
 
 
 #[derive(Debug)]
