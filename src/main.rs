@@ -4,12 +4,13 @@ mod cli;
 mod task;
 mod utils;
 
-fn main() {
+fn main() -> std::io::Result<()> {
     let console = cli::Cli::parse();
+    let mut task_list: Vec<task::Task> = Vec::new();
     let task = utils::new_task(console);
 
-    println!(
-        "Taskname: {}\nDescription: {}\nCreation time: {:?}",
-        task.name, task.description, task.creation_date
-    );
+    task_list.push(task);
+    utils::save_to_file(&task_list, "test.json");
+    // println!("{:?}", task_list);
+    Ok(())
 }
